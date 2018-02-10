@@ -3,7 +3,7 @@
     class MFCApiSDK {
 
         const Host = 'https://myfigurecollection.net';
-        const FileName = 'api.v4.php';
+        const FileName = 'api';
         const Version = 4;
 
         const TimeOut = 10;
@@ -45,7 +45,7 @@
          *
          * @return mixed[]
          */
-        function call($request, $params) {
+        function call($request, $params = []) {
 
             $reply = [];
 
@@ -66,7 +66,7 @@
 
             foreach ($params as $paramName => $paramValue) {
 
-                $params[$paramName] = urlencode($paramValue);
+                $params[$paramName] = sprintf('%s=%s', $paramName, urlencode($paramValue));
 
             }
 
