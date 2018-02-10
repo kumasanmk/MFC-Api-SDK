@@ -30,11 +30,15 @@
         /**
          * @param string $publicToken
          * @param string $privateToken
+         *
+         * @return MFCApiSDK
          */
         function setToken($publicToken, $privateToken) {
 
             $this->publicToken = $publicToken;
             $this->privateToken = $privateToken;
+
+            return $this;
 
         }
 
